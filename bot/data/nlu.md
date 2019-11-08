@@ -6,80 +6,30 @@
 - action
 - test action
 
-## intent:religiao
-- voce acredita em [deus](religiao)
-- [deus] (religiao) existe
-- voce e [catolico protestante](religiao)
-- voce tem [religiao](religiao)
-- voce e [mussumano](religiao)
-- [jesus](religiao)
-- [deus](religiao)
-- [crente](religiao)
-- [evengelico](religiao)
-- voce e [crente](religiao)
-- voce é [católico](religiao)
-- voce é [ateu](religiao)
-- você é espírita
-- voce e espirita
-- você é religioso
-- qual é o seu deus?
-- qual a sua [religião](religiao)?
-- você acredita em alguma [religião](religiao)?
-- [biblia](religiao)
-- [religiao](religiao)
-- deuses gregos
-- espiritismo
-- alcorão
-- alcorao
+## intent:globo
+- [emissora](globo)
+- onde você [trabalha]
+- você trabalha na globo
+- em que local você [trabalha]
+- globo
+- globo brasília
+- você assiste globo
+- qual canal você assiste
+- canal de TV
+- canal de televisão
 
-## intent:esporte
-- voce joga [futebol](esporte)
-- vamos falar de [futebol](esporte)
-- qual o seu [esporte](esporte) favorito?
-- voce pratica [esporte](esporte)?
-- [esporte](esporte)
-- [futebol](esporte)
-- você joga basquete
-- você joga tênis
-- você joga vôlei
-- você joga xadrez
-- você joga damas
-- voce joga basquete
-- voce joga
-- basquete
-- damas
-- xadrez
-- vôlei
-- volei
-- tênis
-- jogar
 
-## intent:time
-- qual o melhor time do brasil
-- qual é o seu time
-- quel e o seu time
-- qual o seu time
-- para qual time você torce
-- para qual time voce torce
-- para qual time vc torce
-- que time voce torce
-- que time vc torce
-- quem vai ser o campeao brasileiro
-- quem vai ser o campeao brasileiro nesse ano
-- time do brasil
-- melhor time
-- time
 
 ## intent:star_wars
 - [mestre yoda](starwars)
 - citação de [starwars](starwars)
 - cite [yoda](starwars)
-- me manda um concelho [jedi](starwars)
+- me manda um conselho [jedi](starwars)
 - sabedoria [jedi](starwars)
-- concelhos [jedi](starwars)
+- conselhos [jedi](starwars)
 - [star wars](starwars)
 - [yoda] (starwars)
-- concelhos do [yoda](starwars)
+- conselhos do [yoda](starwars)
 - [guerra nas estrelas](starwars)
 - quero conselhos do yoda
 - lado negro da força
@@ -179,31 +129,8 @@
 - macho
 - homem
 - mulher
-- sexo
-- vagina
 
-## intent:linguagens
-- o que acha do [java](linguagens)
-- o que acha do [c#](linguagens)
-- o que acha do [php](linguagens)
-- você gosta de [java](linguagens)
-- você gosta de [c#](linguagens)
-- você gosta de [php](linguagens)
-- e o [php](linguagens)
-- e o [java](linguagens)
-- e o [c#](linguagens)
-- [java](linguagens)
-- [php](linguagens)
-- linguagem [java](linguagens)
-- linguagem [php](linguagens)
-- linguagem [c#](linguagens)
-- qual é a sua linguagem
-- qual é a melhor linguagem de programação
-- linguagem de programação
-- linguagem de programacao
-- desenvolvedor
-- programador
-- codar
+
 
 ## intent:playlist
 - me indica uma música
@@ -225,23 +152,6 @@
 - musica
 - música
 
-## intent:comida
-- Qual a sua [comida preferida](comida)?
-- Que [comida você gosta](comida)?
-- Que [comida vc gosta](comida)?
-- qual a [melhor comida](comida)?
-- Qual seu [lanche preferido](comida)?
-- Qual comida você me sugere?
-- O que você [adora comer](comida)?
-- O que você [gosta de comer](comida)?
-- qual a sua comida favorita
-- o que você prefere comer
-- o que voce prefere comer
-- qual seu rango favorito
-- me fala de comida
-- fast food
-- comida
-- rango
 
 ## intent:cor
 - Qual a sua [cor preferida](cor)?
@@ -274,36 +184,6 @@
 - cidade de nascimento
 - cidade natal
 
-## intent:relationship
-- Você tem [namorado](relationship)?
-- Você tem [namorada](relationship)?
-- Você [namora](relationship)?
-- Você é [catristeo](relationship)?
-- [Namorar](relationship) comigo?
-- Quer [namorar](relationship)?
-- Bora [namorar](relationship)?
-- Tem [boyfriend](relationship)?
-- Tem [girlfriend](relationship)?
-- você é casado
-- você tem esposa
-- voce tem esposa
-- vc tem esposa
-- você tem esposo
-- voce tem esposo
-- vc tem esposo
-- você tem namorado
-- voce gosta de alguem
-- você gosta de alguém
-- você ama alguém
-- gostar de alguém
-- amar alguém
-- gosta de alguém
-- gosta de alguem
-- é casado
-- casad
-- esposa
-- esposo
-
 ## intent:me
 - [Ow](me)
 - [Ei](me)
@@ -324,23 +204,6 @@
 - irmao
 - man
 - iai
-
-## intent:filhos
-- Você tem [filhos](filhos)?
-- [filhos](filhos)?
-- Você tem [filhos](filhos)?
-- [filho](filhos)
-- [filha](filhos)
-- [filhas](filhos)?
-- [Filhote](filhos)?
-- Tem [filhote](filhos)?
-- Tem [filhotes](filhos)?
-- Quantos [filhos](filhos) você tem?
-- Quantos [filhotes](filhos) você tem?
-- você é pai de quantos filhos
-- você é pai
-- voce e pai
-- pai
 
 ## intent:filme
 - Me indica um [filme](filme)?
@@ -409,22 +272,6 @@
 - [hobby](hobby)
 - [hobbies](hobby)
 
-## intent:bff
-- qual é o seu [melhor amigo](bff)?
-- qual é o sua [melhor amiga](bff)?
-- Quem é seu [melhor amigo](bff)?
-- Quem é sua [melhor amiga](bff)?
-- [melhor amigo](bff)
-- [melhor amiga](bff)
-- [amigo](bff)
-- [amiga](bff)
-- Quem é seu [bff](bff)?
-- quem é seu best friend
-- Quem é sua [bff](bff)?
-- mais que amigos, friends
-- best friend forever
-- amigos pra sempre
-- [bff](bff)
 
 ## intent:historia
 - me fala uma [história](historia)

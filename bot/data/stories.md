@@ -8,53 +8,18 @@
 * action_test
     - action_test
 
-## path_religiao 1
-* religiao
-    - utter_religiao
+## path_globo 1
+* globo
+    - utter_globo
     - utter_continuar_conversa
 
-## path_religiao 2
+## path_globo 2
 * cumprimentar
     - utter_cumprimentar
-* religiao
-    - utter_religiao
+* globo
+    - utter_globo
     - utter_continuar_conversa
 
-## path_esporte 1
-* esporte
-    - utter_esporte
-    - utter_continuar_conversa
-
-## path_esporte 2
-* cumprimentar
-    - utter_cumprimentar
-* esporte
-    - utter_esporte
-    - utter_continuar_conversa
-
-## path_time 1
-* time
-    - utter_time
-    - utter_continuar_conversa
-
-## path_time 2
-* cumprimentar
-    - utter_cumprimentar
-* time
-    - utter_time
-    - utter_continuar_conversa
-
-## path_linguagens 1
-* linguagens
-    - utter_linguagens
-    - utter_continuar_conversa
-
-## path_linguagens 2
-* cumprimentar
-    - utter_cumprimentar
-* linguagens
-    - utter_linguagens
-    - utter_continuar_conversa
 
 ## path_genero 1
 * genero
@@ -140,18 +105,6 @@
     - utter_playlist
     - utter_continuar_conversa
 
-## path_comida 1
-* comida
-    - utter_comida
-    - utter_continuar_conversa
-
-## path_comida 2
-* cumprimentar
-    - utter_cumprimentar
-* comida
-    - utter_comida
-    - utter_continuar_conversa
-
 ## path_cor 1
 * cor
     - utter_cor
@@ -176,18 +129,6 @@
     - utter_de_onde_voce_eh
     - utter_continuar_conversa
 
-## path_relationship 1
-* relationship
-    - utter_relationship
-    - utter_continuar_conversa
-
-## path_relationship 2
-* cumprimentar
-    - utter_cumprimentar
-* relationship
-    - utter_relationship
-    - utter_continuar_conversa
-
 ## path_me 1
 * me
     - utter_me
@@ -200,17 +141,7 @@
     - utter_me
     - utter_continuar_conversa
 
-## path_filhos 1
-* filhos
-    - utter_filhos
-    - utter_continuar_conversa
 
-## path_filhos 2
-* cumprimentar
-    - utter_cumprimentar
-* filhos
-    - utter_filhos
-    - utter_continuar_conversa
 
 ## path_filme 1
 * filme

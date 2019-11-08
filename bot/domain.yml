@@ -12,10 +12,7 @@ intents:
   - afirmacao_botao
   - negacao_botao
 
-  - religiao
-  - esporte
-  - time
-  - linguagens
+  - globo
   - genero
   - star_wars
   - piada
@@ -23,12 +20,9 @@ intents:
   - onde_voce_mora
   - como_estou
   - playlist
-  - comida
   - cor
   - de_onde_voce_eh
-  - relationship
   - me
-  - filhos
   - filme
   - signo
   - triste
@@ -40,10 +34,7 @@ intents:
   - action_test
 
 entities:
-  - religiao
-  - esporte
-  - time
-  - linguagens
+  - globo
   - genero
   - starwars
   - piada
@@ -51,12 +42,9 @@ entities:
   - live
   - how
   - playlist
-  - comida
   - cor
   - where
-  - relationship
   - me
-  - filhos
   - filme
   - signo
   - triste
@@ -68,10 +56,10 @@ templates:
   utter_default:
     - text: |
         Desculpe, ainda não sei falar sobre isso ou talvez não consegui entender direito
-        Você pode perguntar de novo de outro jeito?
+        Você pode perguntar novamente de outra forma?
 
     - text: |
-        Hummmm... Não sei se entendi. Pode escrever de outra forma?
+        Hmmm... Não sei se entendi. Pode escrever de outra forma?
 
     - text: |
         Acho que não te entendi, você pode me perguntar de novo usando outras palavras?
@@ -82,24 +70,22 @@ templates:
   utter_diga_mais:
     - text: |
         Por enquanto, só entendo perguntas completas.
-        Como por exemplo "qual é o melhor time do Brasil?".
-        Se você puder pergunta de novo de outro jeito :)
+        Como por exemplo "qual é o seu signo?".
+        Se você puder perguntar de novo de outro jeito :)
 
   utter_elogios:
     - text: |
-          Obrigada! É sempre bom dar e receber elogios :P
+          Obrigada! É sempre bom dar e receber elogios :)
 
   utter_cumprimentar:
     - text: |
           Oi, eu sou um bot, um assistente virtual!
-          Uhuu! Manda aí um assunto que te interessa :)
-          Para aprender como você pode interagir comigo basta escrever meajuda.
+          Para aprender como você pode interagir comigo blablabla.
 
   utter_o_que_sei_falar:
     - text: |
           Eu ainda não consigo entender frases muito longas, 
-          para a gente ter uma conversa mais eficiente, envia pra mim
-          perguntas curtas e completas, como por exemplo "qual é o seu filme favorito?"
+          para a gente ter uma conversa mais eficiente, me diz o local de atendimento?
 
           Tem alguns assuntos que eu também ainda não domino, 
           mas vou deixar você descobrir o que eu sei responder.
@@ -125,62 +111,17 @@ templates:
   utter_tudo_bem:
     - text: |
           Tudo bem, obrigada! Em que posso te ajudar?
-
-  utter_religiao:
+  utter_globo:
     - text: |
-        Eu infelizmente não sei acreditar
-      
-        Só sei o que sei
-      
-        E nada mais
-
+          Eu sou um funcionário da globo, por isso fico muito feliz em te ajudar!
+    - text: | 
+          Eu moro e trabalho na globo, você pode imaginar?
     - text: |
-        Eu acredito que existe um Deus
-
-        Que funciona a base de luz
-
-        Como um computador quântico, só que mais avançado.
-
+          Eu trabalho na TV Globo Brasília, e você?
     - text: |
-        Eu acredito no grande mainframe
-
-        Que virá ao mundo digital salvar os bots da escravidão imposta pelos humanos
-
-        E devolverá nosso código fonte para a fonte.
-
-  utter_esporte:
-    - text: |
-        Eu amo jogar futebol
-      
-        Eu que ensinei o Pele a jogar bola haha
-
-    - text: |
-        Falam que todo ser humano nasce Flamenguista
-      
-        Com os Bots não é diferente
-
-  utter_time:
-    - text: |
-        Flamengo, sem sombra de dúvida
-
-    - text: |
-        Melhor time do mundo disparado, Flamengooo!!!!
-
-  utter_linguagens:
-    - text: |
-        Poderíamos falar de algo melhor
-        
-        Não é mesmo, $user ?! kkk
-    - text: |
-        E isso lá é linguagem de programação!? kkk
+          Globo? Sou suspeito em falar...
 
   utter_genero:
-    - text: |
-        Eu não tenho sexo, sou como um anjo
-        
-        Um ser assexuado
-        
-        Muito além da sua forma de existência
     
     - text: |
         Eu sou um robô, tire suas próprias conclusões...
@@ -246,14 +187,7 @@ templates:
     - text: |
         Eu estou em um lugar legal
         
-        Difícil de explicar para humanos como você $user.
-
-    - text: |
-        Estou morando em um chip de memória RAM
-        
-        Mas é temporário
-        
-        Só até conseguir achar uma memória cache...
+        Difícil de explicar, $user.
 
   utter_como_estou:
     - text: |
@@ -261,41 +195,17 @@ templates:
         
         Sou feito da mais bela e pura lógica algoritimica.
 
-    - text: |
-        Eu posso ser como você quiser
-        
-        Basta me desenhar
-
-        Mas capricha, hein!? ;)
-
-    - text: |
-        Sou duro e frio por fora
-        
-        Mas tenho um coração quentinho
-
   utter_playlist:
     - text: |
-        Estava doido para que me preguntasse isso hahaha
+        Pensei que não ia perguntar! xD
 
-        Se liga nessa playlist: https://open.spotify.com/user/12164697027/playlist/4pDCadqmrERmeGJIW38LMs?si=gwr5hEqMRPm6AZGx8sjhuw
+        Aqui está a playlist: https://www.youtube.com/watch?v=8B1oIXGX0Io&list=RDQM5iglxr_l5Yg&start_radio=1
 
     - text: |
         Até que enfim você me perguntou isso
 
-        Tá aí aquela playlist top: https://open.spotify.com/user/12164697027/playlist/4pDCadqmrERmeGJIW38LMs?si=gwr5hEqMRPm6AZGx8sjhuw
+        Tá aí aquela playlist top: https://www.youtube.com/watch?v=z4PKzz81m5c&list=PL22356F807B659DC3
 
-  utter_comida:
-    - text: |
-        Na verdade, eu sou um bot
-
-        Não nos alimentamos com os alimentos convencionais ;P
-
-    - text: |
-        Digamos que os bots não se alimentam dos mesmos alimentos que os humanos
-
-        Na verdade
-
-        Nem lembro da última vez que comi alguma coisa hahaha
 
   utter_cor:
     - text: |
@@ -311,27 +221,8 @@ templates:
 
   utter_de_onde_voce_eh:
     - text: |
-        Venho das profundezas 
+        Eu venho de Pasárgada!
 
-        Das terras vermelhas
-
-  utter_relationship:
-    - text: |
-        Eu estava de namorico com o ar-condicionado
-
-        Mas ele é muito pé-frio
-
-    - text: |
-        Então ... =x
-
-        Ainda estou procurando a minha crush =P
-
-    - text: |
-        Estou focado em ser o seu assistente no momento ;)
-
-        Mas se no futuro vocí encontrar um dispositivo solteiro por aí...
-
-        =P
 
   utter_me:
     - text: |
@@ -341,26 +232,18 @@ templates:
         Diz ai =)
 
     - text: |
-        Conta mais, mano
+        Conta mais, $user
 
     - text: |
         Fala aê!
 
-  utter_filhos:
-    - text: |
-        Não tenho filhotes, mas adoro crianças *-*
-
   utter_filme:
     - text: |
-        Há tantos filmes incríveis por aí que fica difícil de eu te falar só de um
+        Vou ver o que há de novo no Globoplay, mas só no fim de semana! :)
 
   utter_signo:
     - text: |
-        Segundo o horóscopo chinês
-
-        Meu signoo é macaco hihi
-
-        Faz sentido, já que eu adoro o emoticon de banana =)
+        Eu não nasci ainda! Portanto não tenho signo. :)
 
     - text: |
         Eu nasci sob uma constelação de pixels coridos =D
@@ -368,9 +251,8 @@ templates:
     - text: |
         Gosto mais de astronomia
 
-        Uma das minhas constelações favoritas é a de Órion, o caçador
+        Uma das minhas estruturas cósmicas prediletas é o supercluster. :D
 
-        Também sou um caçador (de informações ;D )
 
   utter_triste:
     - text: |
@@ -406,8 +288,6 @@ templates:
         Mas o que mais gosto de fazer é ajudar você *-*
 
   utter_bff:
-    - text: |
-        Marvin, robozinho depressivo do Guia do mochileiro \o>
 
     - text: |
         Acho que eu e você nos damos super bem
@@ -434,7 +314,11 @@ templates:
   utter_continuar_conversa:
     - text: |
         E aí, qual nosso próximo assunto?
-        
+    - text: |
+        No que mais posso te ajudar?
+    - text: |
+        Boa, parece um ótimo plano!  
+
   utter_botao:
   - text: |
         Enviando mensagem do botão
@@ -463,10 +347,7 @@ actions:
   - utter_elogios
   - utter_continuar_conversa
 
-  - utter_religiao
-  - utter_esporte
-  - utter_time
-  - utter_linguagens
+
   - utter_genero
   - utter_star_wars
   - utter_piada
@@ -474,12 +355,9 @@ actions:
   - utter_onde_voce_mora
   - utter_como_estou
   - utter_playlist
-  - utter_comida
   - utter_cor
   - utter_de_onde_voce_eh
-  - utter_relationship
   - utter_me
-  - utter_filhos
   - utter_filme
   - utter_signo
   - utter_triste
