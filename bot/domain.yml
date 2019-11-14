@@ -2,6 +2,15 @@ intents:
   - cumprimentar
   - init_botao
   - diga_mais
+  - clicou_externas
+  - clicou_cameras
+  - clicou_foco
+  - clicou_cartao
+  - clicou_erro_cartao
+  - cartao_cheio
+  - clicou_video
+  - nao_video
+  - correcao_branco
 
   - action_test
 
@@ -28,36 +37,123 @@ templates:
 
   utter_cumprimentar:
     - text: | 
-        Oi, tudo bem? me chamo MARIA, (user). Como estão as coisas? Se precisa de ajuda, digite meajuda.
+        Oi, tudo bem? me chamo MARIA, {name}. Como estão as coisas? Se precisa de ajuda, digite meajuda.
+
   utter_init_botao:
   - text: |
-        Olá, eu me chamo MARIA (Me Ajuda Rápido com Inteligência Artificial) =). 
         Eu fui desenvolvida para poder te ajudar com coisas fáceis e rápidas,
         o que irá te ajudar a otimizar o seu tempo de trabalho. Vamos começar?
-        Clique na área na qual você está!
+        Clique na área na qual você está - 1.Redação; 2.Externas; 3.Ilhas de edição;
+        4.Controle; 5.Acervo; 6.Arte; 7.Esporte; 8.Falar com um especialista.
     channel: "telegram"
     buttons:
-    - title: "Redação"
+    - title: "1"
       payload: "redação"
-    - title: "Externas"
+    - title: "2"
       payload: "externas"
-    - title: "ilhas de edição"
+    - title: "3"
       payload: "ilhas"
-    - title: "Controle"
+    - title: "4"
       payload: "controle"
-    - title: "Arcevo"
-      payload: "arcevo"
-    - title: "Arte"
+    - title: "5"
+      payload: "acervo"
+    - title: "6"
       payload: "arte"
-    - title: "Esporte"
+    - title: "7"
       payload: "esporte"
-    - title: "Falar com um especialista"
+    - title: "8"
       payload: "especialista"
+
+  utter_clicou_externas:
+  - text: |
+        Qual assunto de externas você deseja saber?
+    channel: "telegram"
+    buttons:
+    - title: "Câmeras"
+      payload: "câmera"
+    - title: "Microfone"
+      payload: "microfone"
+    - title: "Agent Ic"
+      payload: "agent_ic"
+    - title: "Ingest"
+      payload: "ingest"
+
+  utter_clicou_cameras:
+  - text: |
+        Qual é o problema?
+    channel: "telegram"
+    buttons:
+    - title: "Não foca"
+      payload: "foco"
+    - title: "Cartão"
+      payload: "cartão"
+    - title: "Vídeo"
+      payload: "video"
+    - title: "Áudio"
+      payload: "áudio"
+  
+  utter_clicou_foco:
+    - text: | 
+        Confira a metragem de distância focal.
+        Repasse ajuste de back-focus na emissora.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+  
+  utter_clicou_cartao:
+  - text: |
+        Quais das opções de cartão?
+    channel: "telegram"
+    buttons:
+    - title: "Erro no cartão"
+      payload: "erro_cartao"
+    - title: "Cartão proxy cheio"
+      payload: "cartao_cheio"
+
+  utter_clicou_erro_cartao:
+    - text: | 
+        Volte aqui mais tarde, para tentar colocar o vídeo do Gustavo.
+
+  utter_cartao_cheio:
+    - text: | 
+        Formate o cartão proxy e comute a chave de proteção do cartão.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_clicou_video:
+  - text: |
+        Escolha em vídeo -
+    channel: "telegram"
+    buttons:
+    - title: "Correção de branco"
+      payload: "correcao_branco"
+    - title: "Não sai vídeo"
+      payload: "nao_video"
+
+  utter_nao_video:
+    - text: | 
+        Preset a câmera.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_correcao_branco:
+    - text: | 
+        Realize o factory reset e presete a câmera.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
 
 actions:
   - utter_default
   - utter_cumprimentar
   - utter_diga_mais
   - utter_init_botao
+  - utter_clicou_externas
+  - utter_clicou_cameras
+  - utter_clicou_foco
+  - utter_clicou_cartao
+  - utter_clicou_erro_cartao
+  - utter_cartao_cheio
+  - utter_clicou_video
+  - utter_nao_video
+  - utter_correcao_branco
 
   - action_test
