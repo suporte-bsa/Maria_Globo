@@ -1,0 +1,274 @@
+intents:
+  - cumprimentar
+  - init_botao
+  - diga_mais
+  - clicou_externas
+  - clicou_cameras
+  - clicou_foco
+  - clicou_cartao
+  - clicou_erro_cartao
+  - cartao_cheio
+  - clicou_video
+  - nao_video
+  - correcao_branco
+  - clicou_audio
+  - audio_metalizado
+  - modulacao_audio
+  - clicou_microfone
+  - pareamento_interferencia
+  - microfone_desligando
+  - microfone_rachando
+  - clicou_agent_ic
+  - agent_ic_n_conecta
+  - clicou_ingest
+  - uploader_aspera
+  - media_producer
+
+  - action_test
+
+templates:
+  utter_default:
+    - text: |
+        Desculpe, ainda não sei falar sobre isso ou talvez não consegui entender direito
+        Você pode perguntar de novo de outro jeito?
+
+    - text: |
+        Hummmm... Não sei se entendi. Pode escrever de outra forma?
+
+    - text: |
+        Acho que não te entendi, você pode me perguntar de novo usando outras palavras?
+
+    - text: |
+        Vamos tentar mais uma vez? Eu não consegui te entender direito, me pergunta de outro jeito?
+
+  utter_diga_mais:
+    - text: |
+        Por enquanto, só entendo perguntas completas.
+        Como por exemplo "Me indica uma playlist?".
+        Se você puder pergunta de novo de outro jeito :)
+
+  utter_cumprimentar:
+    - text: | 
+        Oi, tudo bem? me chamo MARIA, {name}. Como estão as coisas? Se precisa de ajuda, digite meajuda.
+
+  utter_init_botao:
+  - text: |
+        Eu fui desenvolvida para poder te ajudar com coisas fáceis e rápidas,
+        o que irá te ajudar a otimizar o seu tempo de trabalho. Vamos começar?
+        Clique na área na qual você está - 1.Redação; 2.Externas; 3.Ilhas de edição;
+        4.Controle; 5.Acervo; 6.Arte; 7.Esporte; 8.Falar com um especialista.
+    channel: "telegram"
+    buttons:
+    - title: "1"
+      payload: "redação"
+    - title: "2"
+      payload: "externas"
+    - title: "3"
+      payload: "ilhas"
+    - title: "4"
+      payload: "controle"
+    - title: "5"
+      payload: "acervo"
+    - title: "6"
+      payload: "arte"
+    - title: "7"
+      payload: "esporte"
+    - title: "8"
+      payload: "especialista"
+
+  utter_clicou_externas:
+  - text: |
+        Qual assunto de externas você deseja saber?
+    channel: "telegram"
+    buttons:
+    - title: "Câmeras"
+      payload: "câmera"
+    - title: "Microfone"
+      payload: "microfone"
+    - title: "Agent Ic"
+      payload: "agent_ic"
+    - title: "Ingest"
+      payload: "ingest"
+
+  utter_clicou_cameras:
+  - text: |
+        Qual é o problema?
+    channel: "telegram"
+    buttons:
+    - title: "Não foca"
+      payload: "foco"
+    - title: "Cartão"
+      payload: "cartão"
+    - title: "Vídeo"
+      payload: "video"
+    - title: "Áudio"
+      payload: "áudio"
+  
+  utter_clicou_foco:
+    - text: | 
+        Confira a metragem de distância focal.
+        Repasse ajuste de back-focus na emissora.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+  
+  utter_clicou_cartao:
+  - text: |
+        Quais das opções de cartão?
+    channel: "telegram"
+    buttons:
+    - title: "Erro no cartão"
+      payload: "erro_cartao"
+    - title: "Cartão proxy cheio"
+      payload: "cartao_cheio"
+
+  utter_clicou_erro_cartao:
+    - text: | 
+        Volte aqui mais tarde, para tentar colocar o vídeo do Gustavo.
+
+  utter_cartao_cheio:
+    - text: | 
+        Formate o cartão proxy e comute a chave de proteção do cartão.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_clicou_video:
+  - text: |
+        Escolha em vídeo -
+    channel: "telegram"
+    buttons:
+    - title: "Correção de branco"
+      payload: "correcao_branco"
+    - title: "Não sai vídeo"
+      payload: "nao_video"
+
+  utter_nao_video:
+    - text: | 
+        Preset a câmera.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_correcao_branco:
+    - text: | 
+        Realize o factory reset e presete a câmera.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_clicou_audio:
+  - text: |
+        Quais das opções para áudio?
+    channel: "telegram"
+    buttons:
+    - title: "Áudio Metalizado"
+      payload: "audio_metalizado"
+    - title: "Não modula no canal 2"
+      payload: "modulacao_audio"
+
+  utter_audio_metalizado:
+    - text: | 
+        Presete a câmera.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_modulacao_audio:
+    - text: | 
+        Verifique a configuração de Input-2 em Audio Input e modulação no pot.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+  
+  utter_clicou_microfone:
+  - text: |
+        O que está acontecendo?
+    channel: "telegram"
+    buttons:
+    - title: "Pareamento ou interferência"
+      payload: "pareamento_interferencia"
+    - title: "Desligando"
+      payload: "microfone_desligando"
+    - title: "Nível rachando"
+      payload: "microfone_rachando"
+
+  utter_pareamento_interferencia:
+    - text: | 
+        Refaça o pareamento entre o Lapela e o Mic de mão.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.  
+        
+  utter_microfone_desligando:
+    - text: | 
+        Cheque o nível da bateria do TX e do RX.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.  
+        
+  utter_microfone_rachando:
+    - text: | 
+        Ajuste RX em AF out para nível 1 ou no máximo 2 barras.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+        
+  utter_clicou_agent_ic:
+  - text: |
+        O que deseja saber?
+    channel: "telegram"
+    buttons:
+    - title: "Não conecta"
+      payload: "agent_ic_n_conecta"
+
+  utter_agent_ic_n_conecta:
+    - text: | 
+        Ligue para o CTRS-Bsa (61)3316-9373, identificando qual equipamento para repassar as configurações.
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+  utter_clicou_ingest:
+  - text: |
+        Quais das funcionalidades?
+    channel: "telegram"
+    buttons:
+    - title: "Uploader Aspera"
+      payload: "uploader_aspera"
+    - title: "Media Producer"
+      payload: "media_producer"
+
+  utter_uploader_aspera:
+    - text: | 
+        Aqui está um breve tutorial,
+
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=91fd6b51-7bea-41e9-9192-6543b0854023
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+        
+  utter_media_producer:
+    - text: | 
+        BOTAR UM VIDEO TOP AQUI TB
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.    
+
+actions:
+  - utter_default
+  - utter_cumprimentar
+  - utter_diga_mais
+  - utter_init_botao
+  - utter_clicou_externas
+  - utter_clicou_cameras
+  - utter_clicou_foco
+  - utter_clicou_cartao
+  - utter_clicou_erro_cartao
+  - utter_cartao_cheio
+  - utter_clicou_video
+  - utter_nao_video
+  - utter_correcao_branco
+  - utter_clicou_audio
+  - utter_audio_metalizado
+  - utter_modulacao_audio
+  - utter_clicou_microfone
+  - utter_pareamento_interferencia
+  - utter_microfone_desligando
+  - utter_microfone_rachando
+  - utter_clicou_agent_ic
+  - utter_agent_ic_n_conecta
+  - utter_clicou_ingest
+  - utter_uploader_aspera
+  - utter_media_producer
+
+  - action_test
