@@ -74,4 +74,38 @@
 ## intent:correcao_branco
 - [correcao_branco](correcao_branco)
 
+## intent:clicou_audio
+- [áudio](clicou_audio)
 
+## intent:audio_metalizado
+- audio_metalizado
+
+## intent:modulacao_audio
+- modulacao_audio
+
+## intent:clicou_microfone
+- [microfone](clicou_microfone)
+
+## intent:pareamento_interferencia
+- pareamento_interferencia
+
+## intent:microfone_desligando
+- microfone_desligando
+
+## intent:microfone_rachando
+- microfone_rachando
+
+## intent:clicou_agent_ic
+- [agent_ic](clicou_agent_ic)
+
+## intent:agent_ic_n_conecta
+- agent_ic_n_conecta
+
+## intent:clicou_ingest
+- [ingest]clicou_ingest
+
+## intent:uploader_aspera
+- uploader_aspera
+
+## intent:media_producer
+- media_producer
