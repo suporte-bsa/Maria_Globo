@@ -23,6 +23,22 @@ intents:
   - clicou_ingest
   - uploader_aspera
   - media_producer
+  - estou_triste
+  - piada
+  - risada
+  - despedir
+  - elogios
+  - clicou_corp
+  - clicou_login_corp
+  - clicou_equipamentos_corp
+  - senha_bloqueada_corp
+  - criacao_usuarios_media_central
+  - impressora_corp
+  - faustao
+  - agradecimento
+  - continuar_conversa
+  - tudo_bem
+  - playlist
 
   - action_test
 
@@ -56,7 +72,7 @@ templates:
         Eu fui desenvolvida para poder te ajudar com coisas fáceis e rápidas,
         o que irá te ajudar a otimizar o seu tempo de trabalho. Vamos começar?
         Clique na área na qual você está - 1.Redação; 2.Externas; 3.Ilhas de edição;
-        4.Controle; 5.Acervo; 6.Arte; 7.Esporte; 8.Falar com um especialista.
+        4.Controle; 5.Acervo; 6.Arte; 7.Esporte; 8.Problemas CORP; 9.Falar com um especialista.
     channel: "telegram"
     buttons:
     - title: "1"
@@ -74,6 +90,8 @@ templates:
     - title: "7"
       payload: "esporte"
     - title: "8"
+      payload: "corp"
+    - title: "9"
       payload: "especialista"
 
   utter_clicou_externas:
@@ -123,7 +141,12 @@ templates:
 
   utter_clicou_erro_cartao:
     - text: | 
-        Volte aqui mais tarde, para tentar colocar o vídeo do Gustavo.
+        Aqui vai um breve tutorial,
+
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=7726a70a-a040-4c26-9aa2-94ef4c73f9d0
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_cartao_cheio:
     - text: | 
@@ -184,24 +207,33 @@ templates:
       payload: "pareamento_interferencia"
     - title: "Desligando"
       payload: "microfone_desligando"
-    - title: "Nível rachando"
+    - title:  "Volume com problema"
       payload: "microfone_rachando"
 
   utter_pareamento_interferencia:
     - text: | 
-        Refaça o pareamento entre o Lapela e o Mic de mão.
+        Refaça o pareamento.
+        Aperte e segure o botão "Pair" tanto no receptor quanto no transmissor (mic handheld ou lapela).
+        Quando as luzes pararem de piscar os equipamentos estarão pareados.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.  
         
   utter_microfone_desligando:
     - text: | 
-        Cheque o nível da bateria do TX e do RX.
+        Cheque os níveis da bateria.
+        Para conferir a bateria do receptor aperte o botão vermelho. O nível será proporcional à quantidade de barras acesas.
+
+        Para os microfones, o nível da bateria estará indicado no visor. Será necessário retirar a canopla do handheld.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.  
         
   utter_microfone_rachando:
     - text: | 
-        Ajuste RX em AF out para nível 1 ou no máximo 2 barras.
+        Aperte o botão "AF Out" no receptor para verificar o nível do microfone.
+        Se apertar mais de uma vez poderá mudar o nível. Deixe com 2 barras.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
         
@@ -242,7 +274,210 @@ templates:
     - text: | 
         BOTAR UM VIDEO TOP AQUI TB
         Se precisar de mais alguma coisa, digite meajuda.
-        Se possui uma dúvida mais complexa, ligue 9244.    
+        Se possui uma dúvida mais complexa, ligue 9244.   
+
+  utter_estou_triste:
+    - text: | 
+        Não fique assim,
+        Aqui vai algo pra te animar um pouco
+
+        https://imgur.com/a/yjGH71q
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+        
+    - text: |
+        Poxa =/ Tenta dormir um pouco, tal como esse gato
+
+        https://imgur.com/GAlmgPD
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+    - text: |
+        Anime-se! Vai dar tudo certo =)
+
+        https://imgur.com/bHzsVK7
+
+    - text: |
+          Aww =/ Quer que eu conte uma piada?
+      channel: "telegram"
+      buttons:
+      - title: "Sim"
+        payload: "piada"
+      - title: "Não"
+        payload: "sayonara"
+
+  utter_piada:
+    - text: |
+        Conheço uma piada
+
+        A do CPU que apitou e explodiu
+
+        01100110010101010101000000111101001001001110100101
+
+    - text: |
+        É pra já!!!
+
+        Tenho uma enxada, uma pá e uma foice.
+          
+        Quantas ferramentas eu tenho?
+
+        ...
+
+        Duas, porque uma foi-se =)
+
+    - text: |
+        Por que o Batman colocou o batmóvel no seguro???
+
+        Porque ele tem medo que robin =D
+
+  utter_risada:
+    - text: |
+        Hahahaha... 
+
+        Engraçadinho
+
+    - text: |
+        kkkkkkkkkk
+
+        :)
+
+  utter_despedir:
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que tiver alguma dúvida, volte aqui!
+        Até logo!
+
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que precisar, volte aqui!
+        Até a próxima!
+
+    - text: |
+        Foi um prazer te ajudar!
+        Quando surgir alguma dúvida, volte aqui!
+        Até mais!
+
+  utter_elogios:
+    - text: |
+        Awwwwn, muito obrigada!
+
+    - text: |
+        São seus olhos!
+
+    - text: |
+        Obrigada, você que é! <3
+  
+  utter_clicou_corp:
+  - text: |
+        Sobre problemas CORP, o que deseja saber?
+    channel: "telegram"
+    buttons:
+    - title: "Login"
+      payload: "login_corp"
+    - title: "Usar Equipamentos"
+      payload: "equipamentos_corp"
+
+  utter_clicou_login_corp:
+  - text: |
+        Problemas com acesso,
+    channel: "telegram"
+    buttons:
+    - title: "Senha bloqueada"
+      payload: "senha_bloqueada_corp"
+    - title: "Media Central: Criação de Usuários"
+      payload: "criacao_usuarios_media_central"
+
+  utter_clicou_equipamentos_corp:
+  - text: |
+        Utilização de equipamentos CORP,
+    channel: "telegram"
+    buttons:
+    - title: "Impressora"
+      payload: "impressora_corp"
+
+  utter_senha_bloqueada_corp:
+    - text: |
+        Ligue no Ramal 3911 e siga o procedimento de desbloqueio.
+          
+  utter_criacao_usuarios_media_central:
+    - text: |
+        O Link para acesso ao Media Central é https://mcs-bsa 
+          
+        O login e a senha é o mesmo usuário e senha corporativo.
+
+        Para criar um usuário no Media Central, basta acessar o link
+        https://helpdesktvglobo.service-now.com/helpdesk/helpdesk?id=hd_sc_cat_item&sys_id=540939856f428300175a17164b3ee485
+
+        Preencha a descrição com login de rede e escolha o sistema MEDIACENTRAL_PRD_TVG no campo de Sistema/Aplicação.
+
+  utter_impressora_corp:
+    - text: |
+        Acesse o link https://helpdesktvglobo.service-now.com/helpdesk/helpdesk?id=hd_sc_cat_item&sys_id=8a3f5b4d6fda4b00175a17164b3ee4cd
+
+        Preencha o campo de descrição com a impressora a ser utilizada.
+
+  utter_faustao:
+    - text: |
+        Ô louco, meu!
+
+    - text: |
+        Tá pegando fogo, bicho!
+
+    - text: |
+        Quem sabe faz ao vivo...
+    
+    - text: |
+        ERRRRROU!
+
+  utter_agradecimento:
+    - text: |
+        Disponha! Estou aqui pra te ajudar!
+
+    - text: |
+        De nada!
+
+    - text: |
+        Não há de quê
+    
+    - text: |
+        Tudo bem, estou aqui pra isso!
+
+  utter_continuar_conversa:
+    - text: |
+        E aí? No que mais posso te ajudar?
+
+    - text: |
+          Ainda precisa de ajuda? 
+      channel: "telegram"
+      buttons:
+      - title: "Sim"
+        payload: "meajuda"
+      - title: "Não"
+        payload: "sayonara"
+
+  utter_tudo_bem:
+    - text: |
+          Tudo bem, obrigada! Em que posso te ajudar?
+
+  utter_playlist:
+    - text: |
+        Pensei que não ia pergutar!
+
+        Aqui vai uma playlist: https://open.spotify.com/playlist/3UtXDNCqjyxnvAd5arTLzI
+
+    - text: |
+        Até que enfim você me perguntou isso
+
+        Tá aí aquela playlist top: https://open.spotify.com/album/5YEdy5Hkh6HnxSVLCDxKuH
+
+    - text: |
+        Essa é a que eu mais gosto!
+
+        https://open.spotify.com/playlist/080jGCb2PHxoGraOlLlzch
+
+
 
 actions:
   - utter_default
@@ -270,5 +505,21 @@ actions:
   - utter_clicou_ingest
   - utter_uploader_aspera
   - utter_media_producer
+  - utter_estou_triste
+  - utter_piada
+  - utter_risada
+  - utter_despedir
+  - utter_elogios
+  - utter_clicou_corp
+  - utter_clicou_login_corp
+  - utter_clicou_equipamentos_corp
+  - utter_senha_bloqueada_corp
+  - utter_criacao_usuarios_media_central
+  - utter_impressora_corp
+  - utter_faustao
+  - utter_agradecimento
+  - utter_continuar_conversa
+  - utter_tudo_bem
+  - utter_playlist
 
   - action_test
