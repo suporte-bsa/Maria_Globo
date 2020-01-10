@@ -57,6 +57,19 @@ intents:
   - clicou_ingest_02
   - clicou_ingest_03
   - clicou_microfone_03
+  - clicou_externas_03
+  - clicou_externas_04
+  - wappa_uber
+  - checklist_equipamentos_01
+  - checklist_equipamentos_02
+  - checklist_equipamentos_03
+  - checklist_equipamentos_04
+  - checklist_equipamentos_05
+  - checklist_equipamentos_06
+  - checklist_equipamentos_07
+  - checklist_equipamentos_08
+  - checklist_equipamentos_09
+  - telefones_externas
 
   - action_test
 
@@ -130,6 +143,24 @@ templates:
       payload: "agent_ic"
     - title: "Ingest"
       payload: "ingest"
+
+  utter_clicou_externas_03:
+  - text: |
+        ----------------------------------------
+    channel: "telegram"
+    buttons:
+    - title: "Wappa/Uber"
+      payload: "externas_uber"
+    - title: "Checklists"
+      payload: "checklist_equipamentos"
+
+  utter_clicou_externas_04:
+  - text: |
+        ----------------------------------------
+    channel: "telegram"
+    buttons:
+    - title: "Telefones úteis"
+      payload: "telefones_externas"
 
   utter_clicou_cameras:
   - text: |
@@ -369,7 +400,72 @@ templates:
         https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=a4f5bf90-0e25-4a62-b38a-a879ac7e9610
 
         Se precisar de mais alguma coisa, digite meajuda.
-        Se possui uma dúvida mais complexa, ligue 9244.   
+        Se possui uma dúvida mais complexa, ligue 9244.
+   
+  utter_wappa_uber:
+    - text: | 
+        Para você lembrar,
+
+        https://imgur.com/a/h91V6mY
+
+        Aqui está também um mapa explicativo,
+
+        https://imgur.com/a/iWSEGf1
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244. 
+        
+  utter_checklist_equipamentos_01:
+    - custom: 
+       text: "[Kit Maleta 1 (Palácio)](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQTJSN0ROR0ZXRFVaSjZPTEhXUVA5MU9WRi4u)"
+       parse_mode: markdown
+       disable_web_page_preview=true 
+
+  utter_checklist_equipamentos_02:
+    - custom: 
+       text: "[Kit Maleta STF](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQUs2OFkzQ0lTNVpFWFJQOUREMUlITVM1US4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_03:
+    - custom: 
+       text: "[Mochilas Link](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUNllUNlJHVFhIN1NTUlRXNlBRUTFBM1A1US4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_04:
+    - custom: 
+       text: "[Flash News](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQ084T05EVUsyM0lMOFNSWVQyMlA4MUdIOC4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_05:
+    - custom: 
+       text: "[Kit Congresso](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUME5MSTdOVTRUMkhDTkVHTVJDVko3UjlMRC4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_06:
+    - custom: 
+       text: "[UMJ 01](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUMFdHWkhKNTlTR0ozV1NMUjJJQjc5TUE4Ti4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_07:
+    - custom: 
+       text: "[Redação Móvel](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUN0c3SkEzNDZMMDNCSUtPVVA5UVJIRUxVVy4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_08:
+    - custom: 
+       text: "[UMJ 03](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztURDdaUE5LSjQ3QzVIMFYyTTFGTjREN1lTVi4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_09:
+    - custom: 
+       text: "[SNG](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUOENSVUFWSDJHMzE0Q0pNQ0pBQ1NBOEJYVC4u)"
+       parse_mode: markdown
+
+  utter_telefones_externas:
+    - text: |
+        Aqui está a lista de telefones :)
+
+        https://imgur.com/CgzhhDr
 
   utter_estou_triste:
     - text: | 
@@ -791,5 +887,18 @@ actions:
   - utter_clicou_ingest_02
   - utter_clicou_ingest_03
   - utter_clicou_microfone_03
+  - utter_clicou_externas_03
+  - utter_clicou_externas_04
+  - utter_wappa_uber
+  - utter_checklist_equipamentos_01
+  - utter_checklist_equipamentos_02
+  - utter_checklist_equipamentos_03
+  - utter_checklist_equipamentos_04
+  - utter_checklist_equipamentos_05
+  - utter_checklist_equipamentos_06
+  - utter_checklist_equipamentos_07
+  - utter_checklist_equipamentos_08
+  - utter_checklist_equipamentos_09
+  - utter_telefones_externas
 
   - action_test
