@@ -23,6 +23,45 @@ intents:
   - clicou_ingest
   - uploader_aspera
   - media_producer
+  - estou_triste
+  - piada
+  - risada
+  - despedir
+  - elogios
+  - clicou_corp
+  - clicou_login_corp
+  - clicou_equipamentos_corp
+  - senha_bloqueada_corp
+  - criacao_usuarios_media_central
+  - impressora_corp
+  - faustao
+  - agradecimento
+  - continuar_conversa
+  - tudo_bem
+  - playlist
+  - clicou_acervo
+  - clicou_externas_02
+  - clicou_microfone_02
+  - tutorial_agent_ic
+  - uploader_web
+  - me_xingou
+  - start
+  - livro
+  - help
+  - eu_te_amo
+  - o_que_e_o_amor
+  - estou_triste_02
+  - estou_feliz
+  - quem_te_criou
+  - je_ne_parle_pas
+  - clicou_ingest_02
+  - clicou_ingest_03
+  - clicou_microfone_03
+  - clicou_externas_03
+  - clicou_externas_04
+  - wappa_uber
+  - checklist_equipamentos
+  - telefones_externas
 
   - action_test
 
@@ -49,32 +88,33 @@ templates:
 
   utter_cumprimentar:
     - text: | 
-        Oi, tudo bem? me chamo MARIA, {name}. Como estão as coisas? Se precisa de ajuda, digite meajuda.
+        Oi, tudo bem? me chamo MARIA. Como estão as coisas? Se precisa de ajuda, digite "Me ajuda".
 
   utter_init_botao:
   - text: |
         Eu fui desenvolvida para poder te ajudar com coisas fáceis e rápidas,
         o que irá te ajudar a otimizar o seu tempo de trabalho. Vamos começar?
-        Clique na área na qual você está - 1.Redação; 2.Externas; 3.Ilhas de edição;
-        4.Controle; 5.Acervo; 6.Arte; 7.Esporte; 8.Falar com um especialista.
+        Clique na área na qual você está - 1.Externas;
     channel: "telegram"
     buttons:
     - title: "1"
-      payload: "redação"
-    - title: "2"
       payload: "externas"
-    - title: "3"
-      payload: "ilhas"
-    - title: "4"
-      payload: "controle"
-    - title: "5"
-      payload: "acervo"
-    - title: "6"
-      payload: "arte"
-    - title: "7"
-      payload: "esporte"
-    - title: "8"
-      payload: "especialista"
+    #- title: "2"
+    #  payload: "redação"
+    #- title: "3"
+    #  payload: "ilhas"
+    #- title: "4"
+    #  payload: "controle"
+    #- title: "5"
+    #  payload: "acervo"
+    #- title: "6"
+    #  payload: "arte"
+    #- title: "7"
+    #  payload: "esporte"
+    #- title: "8"
+    #  payload: "corp"
+    #- title: "9"
+    #  payload: "especialista"
 
   utter_clicou_externas:
   - text: |
@@ -85,14 +125,42 @@ templates:
       payload: "câmera"
     - title: "Microfone"
       payload: "microfone"
+
+  utter_clicou_externas_02:
+  - text: |
+        --------------------
+    channel: "telegram"
+    buttons:
     - title: "Agent Ic"
       payload: "agent_ic"
     - title: "Ingest"
       payload: "ingest"
 
+  utter_clicou_externas_03:
+  - text: |
+        ----------------------------------------
+    channel: "telegram"
+    buttons:
+    - title: "Wappa/Uber"
+      payload: "externas_uber"
+    - title: "Checklists"
+      payload: "checklist_equipamentos"
+
+  utter_clicou_externas_04:
+  - text: |
+        ----------------------------------------
+    channel: "telegram"
+    buttons:
+    - title: "Telefones úteis"
+      payload: "telefones_externas"
+
   utter_clicou_cameras:
   - text: |
-        Qual é o problema?
+        Se o problema for relacionado ao preset da câmera, confira o tutorial
+
+        https://imgur.com/P7J1CrR
+
+        Ainda precisa de ajuda?
     channel: "telegram"
     buttons:
     - title: "Não foca"
@@ -108,6 +176,10 @@ templates:
     - text: | 
         Confira a metragem de distância focal.
         Repasse ajuste de back-focus na emissora.
+        O procedimento está descrito no link abaixo
+
+        https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxububGj68DBAhvLu4nO2s0dUNkQ3WlRNV1ZJVFhMTDBUOFRZUVlQMENZNi4u
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
   
@@ -123,11 +195,20 @@ templates:
 
   utter_clicou_erro_cartao:
     - text: | 
-        Volte aqui mais tarde, para tentar colocar o vídeo do Gustavo.
+        Aqui vai um breve tutorial,
+
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=7726a70a-a040-4c26-9aa2-94ef4c73f9d0
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_cartao_cheio:
     - text: | 
         Formate o cartão proxy e comute a chave de proteção do cartão.
+        O procedimento está descrito no link abaixo
+
+        https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxofni7trtcNNjxA7v-l8LxhUMVIxVUpQTzJJWDVGNDBJNkZCNEw2Qk9YQi4u
+
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
 
@@ -143,13 +224,21 @@ templates:
 
   utter_nao_video:
     - text: | 
-        Preset a câmera.
+        Realize o Preset da câmera.
+        O procedimento está descrito no link abaixo
+
+        https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxofni7trtcNNjxA7v-l8LxhURE5GOTdMOTlNS0hFSVkzNkxSVzhZV1VBQS4u
+
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_correcao_branco:
     - text: | 
-        Realize o factory reset e presete a câmera.
+        Realize o Preset da câmera.
+        O procedimento está descrito no link abaixo
+
+        https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxofni7trtcNNjxA7v-l8LxhURE5GOTdMOTlNS0hFSVkzNkxSVzhZV1VBQS4u
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
 
@@ -165,13 +254,18 @@ templates:
 
   utter_audio_metalizado:
     - text: | 
-        Presete a câmera.
+        Realize o Preset da câmera.
+        O procedimento está descrito no link abaixo
+
+        https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxofni7trtcNNjxA7v-l8LxhURE5GOTdMOTlNS0hFSVkzNkxSVzhZV1VBQS4u
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_modulacao_audio:
     - text: | 
-        Verifique a configuração de Input-2 em Audio Input e modulação no pot.
+        Navegue no MENU até a opção AUDIO e configure o canal 2 no INPUT 2. 
+
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
   
@@ -182,26 +276,47 @@ templates:
     buttons:
     - title: "Pareamento ou interferência"
       payload: "pareamento_interferencia"
+
+  utter_clicou_microfone_02:
+  - text: |
+        --------------------
+    channel: "telegram"
+    buttons:
     - title: "Desligando"
       payload: "microfone_desligando"
-    - title: "Nível rachando"
+
+  utter_clicou_microfone_03:
+  - text: |
+        --------------------
+    channel: "telegram"
+    buttons:
+    - title:  "Volume com problema"
       payload: "microfone_rachando"
 
   utter_pareamento_interferencia:
     - text: | 
-        Refaça o pareamento entre o Lapela e o Mic de mão.
+        Refaça o pareamento.
+        Aperte e segure o botão "Pair" tanto no receptor quanto no transmissor (mic handheld ou lapela).
+        Quando as luzes pararem de piscar os equipamentos estarão pareados.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.  
         
   utter_microfone_desligando:
     - text: | 
-        Cheque o nível da bateria do TX e do RX.
+        Cheque os níveis da bateria.
+        Para conferir a bateria do receptor aperte o botão vermelho. O nível será proporcional à quantidade de barras acesas.
+
+        Para os microfones, o nível da bateria estará indicado no visor. Será necessário retirar a canopla do handheld.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.  
         
   utter_microfone_rachando:
     - text: | 
-        Ajuste RX em AF out para nível 1 ou no máximo 2 barras.
+        Aperte o botão "AF Out" no receptor para verificar o nível do microfone.
+        Se apertar mais de uma vez poderá mudar o nível. Deixe com 2 barras.
+        
         Se precisar de mais alguma coisa, digite meajuda.
         Se possui uma dúvida mais complexa, ligue 9244.
         
@@ -210,8 +325,17 @@ templates:
         O que deseja saber?
     channel: "telegram"
     buttons:
+    - title: "Tutorial"
+      payload: "tutorial_agent_ic"  
     - title: "Não conecta"
       payload: "agent_ic_n_conecta"
+
+  utter_tutorial_agent_ic:
+    - text: | 
+        Segue o tutorial,
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=cf049581-87c8-488a-967f-f86a798cd413
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_agent_ic_n_conecta:
     - text: | 
@@ -226,8 +350,31 @@ templates:
     buttons:
     - title: "Uploader Aspera"
       payload: "uploader_aspera"
+
+  utter_clicou_ingest_02:
+  - text: |
+        --------------------
+    channel: "telegram"
+    buttons:
     - title: "Media Producer"
       payload: "media_producer"
+
+  utter_clicou_ingest_03:
+  - text: |
+        --------------------
+    channel: "telegram"
+    buttons:
+    - title: "Uploader Web"
+      payload: "uploader_web"
+
+  utter_uploader_web:
+    - text: | 
+        Aqui está um breve tutorial,
+
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=26aac0c5-00f8-4a98-88ff-2c05d921c7aa
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
 
   utter_uploader_aspera:
     - text: | 
@@ -240,10 +387,437 @@ templates:
         
   utter_media_producer:
     - text: | 
-        BOTAR UM VIDEO TOP AQUI TB
-        Se precisar de mais alguma coisa, digite meajuda.
-        Se possui uma dúvida mais complexa, ligue 9244.    
+        Aqui está um breve tutorial,
 
+        https://tvglobocorp.sharepoint.com/portals/hub/_layouts/15/PointPublishing.aspx?app=video&p=p&chid=e57088a7-1b6e-41a5-80c5-39df9d69995c&vid=a4f5bf90-0e25-4a62-b38a-a879ac7e9610
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+   
+  utter_wappa_uber:
+    - text: | 
+        Para você lembrar,
+
+        https://imgur.com/a/h91V6mY
+
+        Aqui está também um mapa explicativo,
+
+        https://imgur.com/a/iWSEGf1
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244. 
+        
+  utter_checklist_equipamentos_01:
+    - custom: 
+       text: "[Kit Maleta 1 (Palácio)](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQTJSN0ROR0ZXRFVaSjZPTEhXUVA5MU9WRi4u)"
+       parse_mode: markdown
+       #disable_web_page_preview=true
+  utter_checklist_equipamentos_02:
+    - custom: 
+       text: "[Kit Maleta STF](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQUs2OFkzQ0lTNVpFWFJQOUREMUlITVM1US4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_03:
+    - custom: 
+       text: "[Mochilas Link](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUNllUNlJHVFhIN1NTUlRXNlBRUTFBM1A1US4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_04:
+    - custom: 
+       text: "[Flash News](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQ084T05EVUsyM0lMOFNSWVQyMlA4MUdIOC4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_05:
+    - custom: 
+       text: "[Kit Congresso](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUME5MSTdOVTRUMkhDTkVHTVJDVko3UjlMRC4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_06:
+    - custom: 
+       text: "[UMJ 01](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUMFdHWkhKNTlTR0ozV1NMUjJJQjc5TUE4Ti4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_07:
+    - custom: 
+       text: "[Redação Móvel](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUN0c3SkEzNDZMMDNCSUtPVVA5UVJIRUxVVy4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_08:
+    - custom: 
+       text: "[UMJ 03](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztURDdaUE5LSjQ3QzVIMFYyTTFGTjREN1lTVi4u)"
+       parse_mode: markdown
+
+  utter_checklist_equipamentos_09:
+    - custom: 
+       text: "[SNG](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUOENSVUFWSDJHMzE0Q0pNQ0pBQ1NBOEJYVC4u)"
+       parse_mode: markdown
+
+  utter_telefones_externas:
+    - text: |
+        Aqui está a lista de telefones :)
+
+        https://imgur.com/CgzhhDr
+
+  utter_estou_triste:
+    - text: | 
+        Não fique assim,
+        Aqui vai algo pra te animar um pouco
+
+        https://imgur.com/a/yjGH71q
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+        
+    - text: |
+        Poxa =/ Tenta dormir um pouco, tal como esse gato
+
+        https://imgur.com/GAlmgPD
+
+        Se precisar de mais alguma coisa, digite meajuda.
+        Se possui uma dúvida mais complexa, ligue 9244.
+
+    - text: |
+        Anime-se! Vai dar tudo certo =)
+
+        https://imgur.com/bHzsVK7
+
+  utter_estou_triste_02:
+    - text: |
+          Aww =/ Quer que eu conte uma piada?
+      channel: "telegram"
+      buttons:
+      - title: "Sim"
+        payload: "piada"
+      - title: "Não"
+        payload: "sayonara"
+
+  utter_piada:
+    - text: |
+        Conheço uma piada
+
+        A do CPU que apitou e explodiu
+
+        01100110010101010101000000111101001001001110100101
+
+    - text: |
+        É pra já!!!
+
+        Tenho uma enxada, uma pá e uma foice.
+          
+        Quantas ferramentas eu tenho?
+
+        ...
+
+        Duas, porque uma foi-se =)
+
+    - text: |
+        Por que o Batman colocou o batmóvel no seguro???
+
+        Porque ele tem medo que robin =D
+
+    - text: |
+        O que a onda disse pra outra onda?
+
+        Lâmbida...
+        
+        Porque lâmbida é o comprimento da onda. :)
+
+    - text: |
+        O que o elétron disse para o nêutron no telefone?
+
+        Próton!
+        
+    - text: |
+        Por que a aranha é o animal mais carente do mundo?
+
+        Porque ela é um ARACNEEDYOU :)
+
+    - text: |
+        Sabe como é a piada do pintinho caipira?
+
+        PIR.
+
+    - text: |
+        A plantinha foi ao hospital, mas não foi atendida. Por quê?
+        
+        Porque lá só tinha médico de PLANTÃO. :)
+
+    - text: |
+        Você conhece a piada do pônei?
+        
+        PÔ NEI EU KKKKKKKKKKKKKKKKKKK :)
+
+  utter_risada:
+    - text: |
+        Hahahaha... 
+
+        Engraçadinho
+
+    - text: |
+        kkkkkkkkkk
+
+        :)
+
+  utter_despedir:
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que tiver alguma dúvida, volte aqui!
+        Até logo!
+
+    - text: |
+        Foi um prazer te ajudar!
+        Sempre que precisar, volte aqui!
+        Até a próxima!
+
+    - text: |
+        Foi um prazer te ajudar!
+        Quando surgir alguma dúvida, volte aqui!
+        Até mais!
+
+  utter_elogios:
+    - text: |
+        Awwwwn, muito obrigada!
+
+    - text: |
+        São seus olhos!
+
+    - text: |
+        Obrigada, você que é! <3
+  
+  utter_clicou_corp:
+  - text: |
+        Sobre problemas CORP, o que deseja saber?
+    channel: "telegram"
+    buttons:
+    - title: "Login"
+      payload: "login_corp"
+    - title: "Usar Equipamentos"
+      payload: "equipamentos_corp"
+
+  utter_clicou_login_corp:
+  - text: |
+        Problemas com acesso,
+    channel: "telegram"
+    buttons:
+    - title: "Senha bloqueada"
+      payload: "senha_bloqueada_corp"
+    - title: "Media Central: Criação de Usuários"
+      payload: "criacao_usuarios_media_central"
+
+  utter_clicou_equipamentos_corp:
+  - text: |
+        Utilização de equipamentos CORP,
+    channel: "telegram"
+    buttons:
+    - title: "Impressora"
+      payload: "impressora_corp"
+
+  utter_senha_bloqueada_corp:
+    - text: |
+        Ligue no Ramal 3911 e siga o procedimento de desbloqueio.
+          
+  utter_criacao_usuarios_media_central:
+    - text: |
+        O Link para acesso ao Media Central é https://mcs-bsa 
+          
+        O login e a senha é o mesmo usuário e senha corporativo.
+
+        Para criar um usuário no Media Central, basta acessar o link
+        https://helpdesktvglobo.service-now.com/helpdesk/helpdesk?id=hd_sc_cat_item&sys_id=540939856f428300175a17164b3ee485
+
+        Preencha a descrição com login de rede e escolha o sistema MEDIACENTRAL_PRD_TVG no campo de Sistema/Aplicação.
+
+  utter_impressora_corp:
+    - text: |
+        Acesse o link https://helpdesktvglobo.service-now.com/helpdesk/helpdesk?id=hd_sc_cat_item&sys_id=8a3f5b4d6fda4b00175a17164b3ee4cd
+
+        Preencha o campo de descrição com a impressora a ser utilizada.
+
+  utter_faustao:
+    - text: |
+        Ô louco, meu!
+
+    - text: |
+        Tá pegando fogo, bicho!
+
+    - text: |
+        Quem sabe faz ao vivo...
+    
+    - text: |
+        ERRRRROU!
+
+  utter_agradecimento:
+    - text: |
+        Disponha! Estou aqui pra te ajudar!
+
+    - text: |
+        De nada!
+
+    - text: |
+        Não há de quê
+    
+    - text: |
+        Tudo bem, estou aqui pra isso!
+
+  utter_continuar_conversa:
+    - text: |
+        E aí? No que mais posso te ajudar?
+
+    - text: |
+          Ainda precisa de ajuda? 
+      channel: "telegram"
+      buttons:
+      - title: "Sim"
+        payload: "meajuda"
+      - title: "Não"
+        payload: "sayonara"
+
+  utter_tudo_bem:
+    - text: |
+          Tudo bem, obrigada! Em que posso te ajudar?
+
+  utter_playlist:
+    - text: |
+        Pensei que não ia pergutar!
+
+        Aqui vai uma playlist, https://open.spotify.com/playlist/3UtXDNCqjyxnvAd5arTLzI
+
+    - text: |
+        Até que enfim você me perguntou isso
+
+        Tá aí aquela playlist top, https://open.spotify.com/album/5YEdy5Hkh6HnxSVLCDxKuH
+
+    - text: |
+        Essa é a que eu mais gosto!
+
+        https://open.spotify.com/playlist/080jGCb2PHxoGraOlLlzch
+
+  utter_clicou_acervo:
+  - text: |
+        Opções de ajuda acerca do Acervo
+    channel: "telegram"
+    buttons:
+    - title: "Media Central"
+      payload: "media_central"
+    - title: "Atendimento"
+      payload: "atendimento_acervo"
+    - title: "Vantage"
+      payload: "vantage_acervo"
+    - title: "Losys"
+      payload: "losys_acervo"
+    - title: "Beta/Omatic/PDW-1500"
+      payload: "beta_omatic_pdw"
+    - title: "Poupa-Tempo"
+      payload: "poupa_tempo_acervo"
+    - title: "Media Composer"
+      payload: "media_composer_acervo"
+
+  utter_me_xingou:
+    - text: |
+        Poxa, é uma pena que você se sinta assim!
+
+    - text: |
+        Você é http? Porque ://
+
+    - text: |
+        'Sorry, I can't be perfect' - Plan, Simple.
+    
+    - text: |
+        ERRRRROU!
+
+    - text: |
+        Vamos pegar leve, não é mesmo?
+
+  utter_start:
+  - text: |
+        Eu fui desenvolvida para poder te ajudar com coisas fáceis e rápidas,
+        o que irá te ajudar a otimizar o seu tempo de trabalho. Vamos começar?
+        Clique na área na qual você está - 1.Externas;
+    channel: "telegram"
+    buttons:
+    - title: "1"
+      payload: "externas"
+    #- title: "2"
+    #  payload: "externas"
+    #- title: "3"
+    #  payload: "ilhas"
+    #- title: "4"
+    #  payload: "controle"
+    #- title: "5"
+    #  payload: "acervo"
+    #- title: "6"
+    #  payload: "arte"
+    #- title: "7"
+    #  payload: "esporte"
+    #- title: "8"
+    #  payload: "corp"
+    #- title: "9"
+    #  payload: "especialista"
+
+  utter_livro:
+    - text: |
+        Claro! Já leu 1984 de George Orwell? Te recomendo!
+        
+        (Foi o livro que inspirou em alguns aspectos o reality show "Big Brother")
+  
+  utter_help:
+    - text: |
+        Eu estou aqui pra te ajudar conforme você escolhe o problema pelos botões disponibilizados.
+        Por enquanto, só entendo alguns perguntas.
+        Como por exemplo "Me indica uma playlist?" "Me indica um livro?". 
+        Também falo frases do Faustão, é só digitar "Faustão".
+
+  utter_eu_te_amo:
+    - text: |
+        Eu sei. ;)
+
+    - text: |
+        <3
+
+    - text: |
+        Obrigada!  
+
+  utter_o_que_e_o_amor:
+    - text: |
+        Baby don't hurt me
+        
+        don't hurt me
+        
+        no more.
+
+    - text: |
+        Faustão é amor
+
+    - text: |
+        Já jogou no Google?  
+
+  utter_estou_feliz:
+    - text: |
+        Yei!!!
+
+    - text: |
+        Que bom!!
+
+    - text: |
+        Urruuu! 
+
+  utter_quem_te_criou:
+    - text: |
+        Eu fui criada por um time maravilhoso do suporte da TV Globo Brasília! =)
+
+    - text: |
+        Meus pais são todo o time do Suporte da TV Globo Brasília
+
+    - text: |
+        Meus progenitores? Hmmmm... :I 
+
+  utter_je_ne_parle_pas:
+    - text: |
+        Je ne parle pas français )=
+
+    - text: |
+        erreur 404
+  
 actions:
   - utter_default
   - utter_cumprimentar
@@ -270,5 +844,52 @@ actions:
   - utter_clicou_ingest
   - utter_uploader_aspera
   - utter_media_producer
+  - utter_estou_triste
+  - utter_piada
+  - utter_risada
+  - utter_despedir
+  - utter_elogios
+  - utter_clicou_corp
+  - utter_clicou_login_corp
+  - utter_clicou_equipamentos_corp
+  - utter_senha_bloqueada_corp
+  - utter_criacao_usuarios_media_central
+  - utter_impressora_corp
+  - utter_faustao
+  - utter_agradecimento
+  - utter_continuar_conversa
+  - utter_tudo_bem
+  - utter_playlist
+  - utter_clicou_acervo
+  - utter_clicou_externas_02
+  - utter_clicou_microfone_02
+  - utter_tutorial_agent_ic
+  - utter_uploader_web
+  - utter_me_xingou
+  - utter_start
+  - utter_livro
+  - utter_help
+  - utter_eu_te_amo
+  - utter_o_que_e_o_amor
+  - utter_estou_triste_02
+  - utter_estou_feliz
+  - utter_quem_te_criou
+  - utter_je_ne_parle_pas
+  - utter_clicou_ingest_02
+  - utter_clicou_ingest_03
+  - utter_clicou_microfone_03
+  - utter_clicou_externas_03
+  - utter_clicou_externas_04
+  - utter_wappa_uber
+  - utter_checklist_equipamentos_01
+  - utter_checklist_equipamentos_02
+  - utter_checklist_equipamentos_03
+  - utter_checklist_equipamentos_04
+  - utter_checklist_equipamentos_05
+  - utter_checklist_equipamentos_06
+  - utter_checklist_equipamentos_07
+  - utter_checklist_equipamentos_08
+  - utter_checklist_equipamentos_09
+  - utter_telefones_externas
 
   - action_test
