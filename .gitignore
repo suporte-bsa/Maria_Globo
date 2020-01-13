@@ -176,7 +176,8 @@ Session.vim
 .netrwhist
 # auto-generated tag files
 tags
-
+#docker-compose
+docker-compose.yml
 
 # End of https://www.gitignore.io/api/vim,linux,macos,python
 
