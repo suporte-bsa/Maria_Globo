@@ -60,7 +60,19 @@ intents:
   - clicou_externas_03
   - clicou_externas_04
   - wappa_uber
+<<<<<<< HEAD
   - checklist_equipamentos
+=======
+  - checklist_equipamentos_01
+  - checklist_equipamentos_02
+  - checklist_equipamentos_03
+  - checklist_equipamentos_04
+  - checklist_equipamentos_05
+  - checklist_equipamentos_06
+  - checklist_equipamentos_07
+  - checklist_equipamentos_08
+  - checklist_equipamentos_09
+>>>>>>> a98dae46e00e95dd301b8eef1c76f7e028ea6033
   - telefones_externas
 
   - action_test
@@ -411,7 +423,12 @@ templates:
     - custom: 
        text: "[Kit Maleta 1 (Palácio)](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQTJSN0ROR0ZXRFVaSjZPTEhXUVA5MU9WRi4u)"
        parse_mode: markdown
+<<<<<<< HEAD
        #disable_web_page_preview=true
+=======
+       disable_web_page_preview=true 
+
+>>>>>>> a98dae46e00e95dd301b8eef1c76f7e028ea6033
   utter_checklist_equipamentos_02:
     - custom: 
        text: "[Kit Maleta STF](https://forms.office.com/Pages/ResponsePage.aspx?id=R8TNpyk7QUu3PoostUsGxt5_6Z4uJsZEuiU57SePwztUQUs2OFkzQ0lTNVpFWFJQOUREMUlITVM1US4u)"
@@ -680,12 +697,20 @@ templates:
     - text: |
         Pensei que não ia pergutar!
 
+<<<<<<< HEAD
         Aqui vai uma playlist, https://open.spotify.com/playlist/3UtXDNCqjyxnvAd5arTLzI
+=======
+        Aqui vai uma playlist: https://open.spotify.com/playlist/3UtXDNCqjyxnvAd5arTLzI
+>>>>>>> a98dae46e00e95dd301b8eef1c76f7e028ea6033
 
     - text: |
         Até que enfim você me perguntou isso
 
+<<<<<<< HEAD
         Tá aí aquela playlist top, https://open.spotify.com/album/5YEdy5Hkh6HnxSVLCDxKuH
+=======
+        Tá aí aquela playlist top: https://open.spotify.com/album/5YEdy5Hkh6HnxSVLCDxKuH
+>>>>>>> a98dae46e00e95dd301b8eef1c76f7e028ea6033
 
     - text: |
         Essa é a que eu mais gosto!

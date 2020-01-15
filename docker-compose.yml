@@ -12,6 +12,20 @@ services:
     #command: sh -c "train-nlu"
     command: sh -c "make train"
 
+  #nginx:
+   # image: nginx:1.13-alpine
+   # container_name: nginx01
+    #ports:
+     # - "80:80"
+      #- "443:443"
+    #volumes:
+     # - .:/rasa-boilerplate-ptbr
+      #- ./nginx:/etc/nginx/conf.d
+      #- ./nginx/certs:/etc/nginx/certs
+       #- ./nginx
+    #depends_on:
+     # - actions
+
 
   # ================================= Bot =====================================
   # Generic Rasa bot, used to run console for example.
@@ -22,7 +36,7 @@ services:
       dockerfile: ./docker/bot.Dockerfile
     restart: unless-stopped
     ports:
-      - 5004:5004
+      - 5013:5013
     depends_on:
       - actions
 
@@ -33,7 +47,7 @@ services:
       context: .
       dockerfile: ./docker/actions.Dockerfile
     ports:
-      - 5055:5055
+      - 5012:5012
     volumes:
       - ./bot/actions:/bot/actions
     command: sh -c "make run-actions"
@@ -45,66 +59,67 @@ services:
         context: .
         dockerfile: ./docker/bot.Dockerfile
       ports:
-        - 5005:5005
+        - 5011:5011
       depends_on:
         - actions
       command: sh -c "make webchat"
+      
 
   # =============================== Analytics =================================
   # Analitics ElasticSearch Stack.
-  elasticsearch:
-    build:
-      context: .
-      dockerfile: ./docker/elasticsearch.Dockerfile
-    restart: unless-stopped
-    ports:
-      - 9200:9200
-      - 9300:9300
-    env_file:
-      - env/elasticsearch.env
-    volumes:
-      - esbackup:/usr/share/elasticsearch/backup
-      - ./modules/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
-      - esdata:/usr/share/elasticsearch/data
+#  elasticsearch:
+#    build:
+#      context: .
+#      dockerfile: ./docker/elasticsearch.Dockerfile
+#    restart: unless-stopped
+#    ports:
+#      - 9200:9200
+#      - 9300:9300
+#    env_file:
+#      - env/elasticsearch.env
+#    volumes:
+#      - esbackup:/usr/share/elasticsearch/backup
+#      - ./modules/elasticsearch/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+#      - esdata:/usr/share/elasticsearch/data
 
   # Visualization layer of Analitics Stack.
-  kibana:
-    build:
-      context: .
-      dockerfile: ./docker/kibana.Dockerfile
-    restart: unless-stopped
-    ports:
-      - 5601:5601
-    env_file:
-      - env/kibana.env
-    depends_on:
-      - elasticsearch
+ # kibana:
+ #   build:
+ #     context: .
+ #     dockerfile: ./docker/kibana.Dockerfile
+ #   restart: unless-stopped
+ #   ports:
+ #     - 5601:5601
+ #   env_file:
+ #     - env/kibana.env
+ #   depends_on:
+ #     - elasticsearch
 
   # =============================== Broker ====================================
   # Custom broker to store Rasa tracker data.
-  rabbitmq:
-    image: rabbitmq:3-management
-    restart: unless-stopped
-    volumes:
-      - ./db/rabbitmq:/var/lib/rabbitmq
-    ports:
-      - 15672:15672
-    env_file:
-      - env/rabbitmq.env
+  #rabbitmq:
+  #  image: rabbitmq:3-management
+  #  restart: unless-stopped
+  #  volumes:
+  #    - ./db/rabbitmq:/var/lib/rabbitmq
+  #  ports:
+  #    - 15672:15672
+  #  env_file:
+  #    - env/rabbitmq.env
 
   # Custom broker consumer responsible to store data into ElasticSearch.
-  rabbitmq-consumer:
-    build:
-      context: .
-      dockerfile: ./docker/consumer.Dockerfile
-    restart: unless-stopped
-    volumes:
-      - ./modules/rabbitmq/consumer/:/opt/scripts/
-    depends_on:
-      - rabbitmq
-    env_file:
-      - env/rabbitmq-consumer.env
-    command: python3 /opt/scripts/consume_bot_messages.py
+  #rabbitmq-consumer:
+  #  build:
+  #    context: .
+  #    dockerfile: ./docker/consumer.Dockerfile
+  #  restart: unless-stopped
+  #  volumes:
+  #    - ./modules/rabbitmq/consumer/:/opt/scripts/
+  #  depends_on:
+  #    - rabbitmq
+  #  env_file:
+  #    - env/rabbitmq-consumer.env
+  #  command: python3 /opt/scripts/consume_bot_messages.py
 
   # ============================ Telegram Bot =================================
   # Specific Rasa bot integrated with Telegram.
@@ -115,7 +130,7 @@ services:
       env_file:
         - env/bot-telegram.env
       ports:
-        - 5001:5001
+        - 5010:5010
       depends_on:
         - actions
       volumes:
@@ -124,22 +139,23 @@ services:
 
   # =============================== Notebooks =================================
   # Rasa lab to enhance hyperparameters.
-  notebooks:
-    build:
-      context: .
-      dockerfile: ./docker/notebooks.Dockerfile
-    env_file:
-      - env/notebooks.env
-    volumes:
-      - ./modules/notebooks:/work/notebooks
-      - ./bot/:/bot/
-    ports:
-      - 8888:8888
+  #notebooks:
+  #  build:
+  #    context: .
+  #    dockerfile: ./docker/notebooks.Dockerfile
+  #  env_file:
+  #    - env/notebooks.env
+  #  volumes:
+  #    - ./modules/notebooks:/work/notebooks
+  #    - ./bot/:/bot/
+  #  ports:
+  #    - 8888:8888
 
 volumes:
-  notebook_models:
-  mongo_data:
-  rabbit_data:
+#  notebook_models:
+#  mongo_data:
+#  rabbit_data:
   esbackup:
   esdata:
     driver: local
+
