@@ -68,17 +68,17 @@ services:
       - esdata:/usr/share/elasticsearch/data
 
   # Visualization layer of Analitics Stack.
-  #kibana:
-  #  build:
-  #    context: .
-  #    dockerfile: ./docker/kibana.Dockerfile
-  #  restart: unless-stopped
-  #  ports:
-  #    - 5601:5601
-  #  env_file:
-  #    - env/kibana.env
-  #  depends_on:
-  #    - elasticsearch
+  kibana:
+    build:
+      context: .
+      dockerfile: ./docker/kibana.Dockerfile
+    restart: unless-stopped
+    ports:
+      - 5601:5601
+    env_file:
+      - env/kibana.env
+    depends_on:
+      - elasticsearch
 
   # =============================== Broker ====================================
   # Custom broker to store Rasa tracker data.
