@@ -488,3 +488,12 @@
 
 ## intent:telefones_externas
 - telefones_externas
+
+## intent:tutoriais_externas
+- tutoriais_externas
+
+## intent:hee
+- hee
+
+## intent:app_externas
+- aplicativos_externas

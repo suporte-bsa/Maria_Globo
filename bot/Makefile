@@ -18,7 +18,7 @@ shell:
 	rasa shell -m models/ -vv --endpoints endpoints.yml --port 5004 --cors "*"
 
 telegram:
-	rasa run -m models/ -vv --port 5010 --credentials credentials.yml \
+	rasa run -m models/ -vv --port 5001 --credentials credentials.yml \
 	--endpoints endpoints.yml
 
 webchat:
