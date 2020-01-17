@@ -32,7 +32,7 @@ Foi escolhido essa estrutura por algumas vantagens que apresenta:
 
 É utilizado na MARIA diversas tecnologias que interagem entre si para obter um melhor resultado. Veja a arquitetura implementada:
 
-![](https://imgur.com/uIbRfVP)
+![](estutura_maria.jpg)
 
 O usuário interage com a MARIA via Telegram, que manda as mensagens para o Rasa NLU através de
 conectores, onde ele identifica a *intent*, e responde pelo Rasa Core, de acordo com as *stories* e *actions*.  
