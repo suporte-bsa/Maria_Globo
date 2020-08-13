@@ -80,7 +80,6 @@ sudo code .
 ```
 
 * [Como adicionar utter, intent e stories no rasa](https://github.com/suporte-bsa/Maria_Globo/blob/master/docs/Tutoriais/tutorial-primeira-conversa.md);
-* Como adicionar botões, hyperlinks e responder a comandos e adicionar imagens;
 
 *Configurar o projeto
 
